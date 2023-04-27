@@ -12,10 +12,8 @@ pipeline {
       steps {
         cleanWs()
         echo "JAVA_HOME: ${JAVA_HOME}"
-        echo "PATH: ${PATH}"
         echo "building application"
         sh "java --version"
-        sh "mvn -DskipTests clean package"
       }
     }
     stage('test') {
