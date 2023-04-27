@@ -22,8 +22,7 @@ pipeline {
             java --version
             mvn --version
         """
-      }
-      steps {
+        
         echo "building application"
         sh "mvn -DskipTests clean package"
       }
