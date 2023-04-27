@@ -10,7 +10,8 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        echo 'building application'
+        echo "building application"
+        sh "mvn -DskipTests clean package"
       }
     }
     stage('test') {
@@ -21,6 +22,7 @@ pipeline {
     stage('deploy') {
       steps {
         echo 'deploying application'
+        sh "./mvnw quarkus:dev"
       }
     }
   }
