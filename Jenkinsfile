@@ -11,6 +11,7 @@ pipeline {
       steps {
         cleanWs()
         echo 'building application'
+        sh "java --version"
         sh "mvn -DskipTests clean package"
       }
     }
