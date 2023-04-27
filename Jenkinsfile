@@ -11,7 +11,6 @@ pipeline {
         cleanWs()
         echo "building application"
         sh "ls -al"
-        sh "mvn clean install"
       }
     }
     stage('test') {
