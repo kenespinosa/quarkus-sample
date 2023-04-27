@@ -5,6 +5,8 @@ pipeline {
     maven "mvn-3.9.1"
   }
   
+  options { skipStagesAfterUnstable() }
+  
   stages {
     stage('check deploy') {
       steps {
