@@ -11,6 +11,7 @@ pipeline {
       steps {
         cleanWs()
         echo "building application"
+        bat "cd quarkus-sample"
         bat "mvn clean install"
       }
     }
