@@ -7,6 +7,10 @@ pipeline {
     jdk "jdk-17.0.7"
   }
   
+  environment {
+    JAVA_HOME="${tool 'jdk-17.0.7'}"
+  }
+  
   stages {
     stage('build') {
       steps {
