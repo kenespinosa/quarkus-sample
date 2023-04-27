@@ -10,10 +10,7 @@ pipeline {
     stage('build') {
       steps {
         cleanWs()
-        env.JAVA_HOME="${tool 'jdk-17.0.7'}"
-        env.PATH="${env.JAVA_HOME}/bin:${env.PATH}"
-        sh "ls /var/jenkins_home/workspace/my-pipeline_main"
-        echo "${JAVA_HOME}"
+        echo "JAVA_HOME: ${JAVA_HOME}"
         echo "building application"
         sh "java --version"
         sh "mvn -DskipTests clean package"
