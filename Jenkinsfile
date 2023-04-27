@@ -10,7 +10,8 @@ pipeline {
     stage('build') {
       steps {
         cleanWs()
-        echo 'building application'
+        sh "ls /var/jenkins_home/workspace/my-pipeline_main"
+        echo "building application"
         sh "java --version"
         sh "mvn -DskipTests clean package"
       }
