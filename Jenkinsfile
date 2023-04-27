@@ -9,7 +9,6 @@ pipeline {
     stage('build') {
       steps {
         echo "building application"
-        sh "ls -al"
         sh "mvn clean package"
       }
     }
@@ -26,3 +25,8 @@ pipeline {
   }
 }
 
+post {
+    always {
+      echo "Build completed."
+    }
+  }
