@@ -22,8 +22,7 @@ pipeline {
 
                     SUB='deploy'
                     
-                    if [ gitCommit == 'deploy'] 
-                    then
+                    if [[ gitCommit == $SUB ]]; then
                         echo "Keyword found. Will build and deploy."
                     else
                         echo "Keyword not found. Will not build and deploy."
