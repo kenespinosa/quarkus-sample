@@ -22,11 +22,11 @@ pipeline {
         echo 'deploying application'
       }
     }
-  }
-}
-
-post {
-    always {
-      echo "Build completed."
+    
+    post {
+      always {
+        echo "Build completed."
+      }
     }
   }
+}
