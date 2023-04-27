@@ -10,10 +10,7 @@ pipeline {
     stage('build') {
       steps {
         cleanWs()
-        sh "mvn -v"
-        echo "JAVA_HOME: ${JAVA_HOME}"
         echo "building application"
-        sh "java --version"
       }
     }
     stage('test') {
