@@ -11,8 +11,8 @@ pipeline {
       steps {
         cleanWs()
         echo "building application"
-        bat "dir"
-        bat "mvn -f pom.xml clean install"
+        sh "ls -al"
+        sh "mvn clean install"
       }
     }
     stage('test') {
