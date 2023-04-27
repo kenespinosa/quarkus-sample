@@ -12,7 +12,7 @@ pipeline {
         cleanWs()
         echo "building application"
         bat "dir"
-        bat "mvn clean install"
+        bat "mvn -f pom.xml clean install"
       }
     }
     stage('test') {
