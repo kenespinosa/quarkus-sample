@@ -11,7 +11,7 @@ pipeline {
       steps {
         cleanWs()
         echo "building application"
-        sh "mvn clean install"
+        bat "mvn clean install"
       }
     }
     stage('test') {
