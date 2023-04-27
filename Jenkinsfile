@@ -8,9 +8,9 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        cleanWs()
         echo "building application"
         sh "ls -al"
+        sh "mvn clean package"
       }
     }
     stage('test') {
