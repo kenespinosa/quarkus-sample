@@ -9,6 +9,7 @@ pipeline {
   options { skipStagesAfterUnstable() }
   
   stages {
+    
     stage('check deploy') {
       steps {
         script {
@@ -33,17 +34,20 @@ pipeline {
         }
       }
     }
+    
     stage('build') {
       steps {
         echo "building application"
         sh "mvn -DskipTests clean package"
       }
     }
+    
     stage('test') {
       steps {
         echo 'testing application'
       }
     }
+    
     stage('deploy') {
       steps {
         echo 'deploying application'
