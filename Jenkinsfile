@@ -12,7 +12,7 @@ pipeline {
       steps {
         cleanWs()
         echo 'building application'
-        sh "./mvn -DskipTests clean package"
+        sh "mvnw -DskipTests clean package"
       }
     }
     stage('test') {
