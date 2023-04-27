@@ -5,6 +5,9 @@ pipeline {
     // Install the Maven version configured as "M3" and add it to the path.
     maven "mvn3.9.1"
   }
+  environment {
+    PATH="${PATH}:${JAVA_HOME}/bin"
+  }
   
   stages {
     stage('build') {
