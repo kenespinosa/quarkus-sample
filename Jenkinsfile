@@ -12,6 +12,7 @@ pipeline {
       steps {
         cleanWs()
         sh "ls /var/jenkins_home/workspace/my-pipeline_main"
+        echo "${JAVA_HOME}"
         echo "building application"
         sh "java --version"
         sh "mvn -DskipTests clean package"
