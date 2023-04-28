@@ -17,7 +17,7 @@ pipeline {
             readlink -f $(which sh)
 
             SUB='deploy'
-            if [ "\${gitCommit}" == "\${SUB}" ]; then
+            if [[ "\${gitCommit}" == "\${SUB}" ]]; then
                 echo "Keyword found. Will build and deploy."
             else
                 echo "Keyword not found. Will not build and deploy."
