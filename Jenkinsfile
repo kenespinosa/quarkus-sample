@@ -14,7 +14,7 @@ pipeline {
             gitCommit=`git log -n 1 | awk 'NR==5' | awk '{\$1=\$1};1' | tr '[:upper:]' '[:lower:]'`
             echo "GIT COMMIT: \$gitCommit"
 
-            SUB='deploy'
+            SUB=deploy
             if [[ "$gitCommit" == "$SUB" ]]; then
                 echo "Keyword found. Will build and deploy."
             else
