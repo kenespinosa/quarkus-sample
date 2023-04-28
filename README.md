@@ -57,4 +57,22 @@ If you want to learn more about building native executables, please consult http
 
 Easily start your Reactive RESTful Web Services
 
+### Validate Jenkinsfile
+
+Getting Jenkins Crumb: 
+```
+http://<JENKINS_HOST:PORT>/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,%22:%22,//crumb)
+```
+
+*Execute the cURL command below inside the project directory.*
+
+Curl command:
+```
+curl -X POST \
+  'http://<JENKINS_HOST:PORT>/pipeline-model-converter/validate' \
+  --header 'Jenkins-Crumb: JENKINS_CRUMB' \
+  --user 'jenkins-admin:admin' \
+  --form 'jenkinsfile=<Jenkinsfile'
+```
+
 [Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
