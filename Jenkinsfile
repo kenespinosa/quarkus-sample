@@ -10,12 +10,14 @@ pipeline {
       steps {
       // Check for deploy keyword at the start of the commit message                
         sh """
-            #!/bin/bash
+            #!/bin/sh
             gitCommit=`git log -n 1 | awk 'NR==5' | awk '{\$1=\$1};1' | tr '[:upper:]' '[:lower:]'`
             echo "GIT COMMIT: \$gitCommit"
+            
+            readlink -f $(which sh)
 
             SUB='deploy'
-            if [[ "\$gitCommit" == "\$SUB" ]]; then
+            if [ "\$gitCommit" == "\$SUB" ]; then
                 echo "Keyword found. Will build and deploy."
             else
                 echo "Keyword not found. Will not build and deploy."
