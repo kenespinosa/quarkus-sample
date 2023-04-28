@@ -11,7 +11,7 @@ pipeline {
 
     stage('verify changes') {
       steps {
-      // Check for deploy keyword at the start of the commit message
+        // Check for deploy keyword at the start of the commit message
         try {
           sh """
               #!/bin/bash
